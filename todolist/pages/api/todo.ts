@@ -15,13 +15,13 @@ const todos: Todo[] =[
         {
         toDoId: "1",
         toDoTitle: "go to gem",
-        toDoCategory: "health",
+        toDoCategory: "Health",
         toDoCompleted: true,
     },
     {
         toDoId: "2",
         toDoTitle: "make dinner",
-        toDoCategory: "health",
+        toDoCategory: "Health",
         toDoCompleted: false,
     },
     {
@@ -30,13 +30,13 @@ const todos: Todo[] =[
         toDoCategory: "Education",
         toDoCompleted: false,
     },
+    
 ];
 
 async function getTodos(req: NextApiRequest, res: NextApiResponse) {
-    res.status(200).send(todos);
-
-    // try {
-    // } catch (error) {
-    //     res.status(500).json({ message: 'severe error' })
-    // }
+    try {
+        res.status(200).send(todos);
+    } catch (error) {
+        res.status(500).json({ message: 'severe error' })
+    }
 }

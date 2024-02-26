@@ -38,9 +38,9 @@ export default function Home() {
                 idx === 0 ? "rounded-t-md" :
                 todos.length -1 === idx ? ' rounded-b-md' : ''
                 } bg-gray-700 shadow-md cursor-pointer hover:bg-gray-600 flex p-4 felx justify-between w-full`}>
-                <div className="">{todo.toDoTitle}</div>
-                <div className="">{todo.toDoCategory}</div>
-                <div className="">{todo.toDoCompleted ? 'Completed' : 'Not Completed'}</div>
+                <div className="flex-1 text-start">{todo.toDoTitle}</div>
+                <div className="grow text-center">{todo.toDoCategory}</div>
+                <div className="flex-1 text-end">{todo.toDoCompleted ? 'Completed' : 'Not Completed'}</div>
               </div>
             </>
             )}
