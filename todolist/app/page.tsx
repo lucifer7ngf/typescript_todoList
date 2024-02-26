@@ -6,14 +6,19 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
 
-  const [ todos , setTodos] = useState<Todo[]>();
+  const [ todos , setTodos] = useState<Todo[]>([]);
 
-  useEffect( () => {
+  useEffect(() => {
     async function fetchTodos() {
-      const response = await axios.get(`/api/todo`);
-      setTodos(response.data as Todo[] );
+      try {
+        const response = await axios.get(`/api/todo`);
+        setTodos(response.data as Todo[]);
+      } catch (error) {
+        console.error('Error fetching todos:', error);
+      }
     }
-    fetchTodos
+
+    fetchTodos();
   }, []);
 
 

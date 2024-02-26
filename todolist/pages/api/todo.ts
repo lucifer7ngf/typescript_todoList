@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import type { Todo } from '@/app/types' 
+import type { Todo } from '@/app/types'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse ) {
     switch (req.method){
@@ -33,9 +33,10 @@ const todos: Todo[] =[
 ];
 
 async function getTodos(req: NextApiRequest, res: NextApiResponse) {
-    try {
-        res.status(200).send(todos);
-    } catch (error) {
-        res.status(500).json({ message: 'severe error' })
-    }
+    res.status(200).send(todos);
+
+    // try {
+    // } catch (error) {
+    //     res.status(500).json({ message: 'severe error' })
+    // }
 }
