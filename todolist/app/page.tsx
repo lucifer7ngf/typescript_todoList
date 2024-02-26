@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect( () => {
     async function fetchTodos() {
-      const response = await axios.get(`./pages/api/todo`);
+      const response = await axios.get(`/api/todo`);
       setTodos(response.data as Todo[] );
     }
     fetchTodos
